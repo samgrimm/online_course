@@ -1,6 +1,7 @@
 class SeccosController < ApplicationController
   before_action :set_seccao, only: [:show, :edit, :update, :destroy]
   before_action :set_curso
+  before_action :authenticate_user!
   # GET /seccos
   # GET /seccos.json
   def index

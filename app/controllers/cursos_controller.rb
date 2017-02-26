@@ -1,10 +1,11 @@
 class CursosController < ApplicationController
   before_action :set_curso, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /cursos
   # GET /cursos.json
   def index
-    @cursos = Curso.all
+    @cursos = current_user.cursos
   end
 
   # GET /cursos/1
@@ -24,7 +25,7 @@ class CursosController < ApplicationController
   # POST /cursos
   # POST /cursos.json
   def create
-    @curso = Curso.new(curso_params)
+    @curso = current_user.cursos.build(curso_params)
 
     respond_to do |format|
       if @curso.save

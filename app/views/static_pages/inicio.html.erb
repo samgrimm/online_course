@@ -15,10 +15,19 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <ul class="navbar-nav pull-right">
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <% if user_signed_in? %>
+      <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, method: :delete, class:"nav-link"  %></li>
+      <% else %>
+        <li class="nav-item"><%= link_to "Entrar", new_user_session_path, class:"nav-link"  %></li>
+        <li class="nav-item"><%= link_to "Criar Conta", new_user_registration_path, class:"nav-link"  %></li>
+      <% end %>
+    </ul>
+
   </div>
 </nav>
 

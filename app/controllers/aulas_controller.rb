@@ -2,10 +2,11 @@ class AulasController < ApplicationController
   before_action :set_aula, only: [:show, :edit, :update, :destroy]
   before_action :set_seccao
   before_action :set_curso
+  before_action :authenticate_user!
   # GET /aulas
   # GET /aulas.json
   def index
-    @aulas = Aula.all
+    @aulas = @secco.aulas
   end
 
   # GET /aulas/1
