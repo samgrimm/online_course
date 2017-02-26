@@ -1,0 +1,12 @@
+<h1><%= t('new') %> Secco</h1>
+
+<%= form_for(@secco, url:curso_seccos_path( @curso,locale: I18n.locale) ) do |f| %>
+
+  <%= render 'form',  f: f %>
+
+  <div class="form-group">
+    <%= f.submit t('.create') %>
+  </div>
+  <% end %>
+
+<%= link_to t('back'), curso_seccos_path(locale:I18n.locale) %>

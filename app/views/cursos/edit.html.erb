@@ -1,0 +1,12 @@
+<h1><%= t('editing') %>  Curso</h1>
+<%= form_for(@curso, url:curso_path(@curso, locale: I18n.locale) ) do |f| %>
+
+  <%= render 'form', f:f %>
+
+  <div class="form-group">
+    <%= f.submit t('.update') %>
+  </div>
+  <% end %>
+
+<%= link_to t('show'), curso_path(@curso, locale:I18n.local) %> |
+<%= link_to t('back'), cursos_path(locale:I18n.locale) %>

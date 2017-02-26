@@ -1,0 +1,13 @@
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @curso.titulo %>
+</p>
+
+<p>
+  <strong>Ementa:</strong>
+  <%= @curso.ementa %>
+</p>
+<%= link_to t('new_secco'), new_curso_secco_path(@curso, locale: I18n.locale) %> |
+<%= link_to t('edit'), edit_curso_path(@curso, locale: I18n.locale) %> |
+<%= link_to t('back'), cursos_path(locale: I18n.locale) %>

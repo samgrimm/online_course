@@ -1,0 +1,12 @@
+<h1><%= t('new') %> Curso</h1>
+
+<%= form_for(@curso, url:cursos_path( locale: I18n.locale) ) do |f| %>
+
+  <%= render 'form',  f: f %>
+
+  <div class="form-group">
+    <%= f.submit t('.create') %>
+  </div>
+  <% end %>
+
+<%= link_to t('back'), cursos_path(locale:I18n.locale) %>

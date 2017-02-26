@@ -1,0 +1,22 @@
+
+  <% if @secco.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@secco.errors.count, "error") %> prohibited this secco from being saved:</h2>
+
+      <ul>
+      <% @secco.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-group">
+            <%= f.label :titulo %>
+      <%= f.text_field :titulo, class:"form-control" %>
+      </div>
+
+    <div class="form-group">
+            <%= f.label :resumo %>
+      <%= f.text_area :resumo, class:"form-control" %>
+      </div>

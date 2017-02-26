@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :cursos do
+    resources :seccos
+  end
   root to: 'static_pages#inicio'
 
   get 'static_pages/sobre'

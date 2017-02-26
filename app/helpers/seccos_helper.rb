@@ -1,0 +1,2 @@
+module SeccosHelper
+end
