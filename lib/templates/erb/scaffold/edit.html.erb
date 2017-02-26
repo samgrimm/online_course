@@ -1,0 +1,12 @@
+<h1><%%= t('editing') %>  <%= singular_table_name.titleize %></h1>
+<%%= form_for(@<%= singular_table_name %>, url:<%= singular_table_name %>_path(@<%= singular_table_name %>, locale: I18n.locale) ) do |f| %>
+
+  <%%= render 'form', f:f %>
+
+  <div class="form-group">
+    <%%= f.submit t('.update') %>
+  </div>
+  <%% end %>
+
+<%%= link_to t('show'), <%= singular_table_name %>_path(@<%= singular_table_name %>, locale:I18n.local) %> |
+<%%= link_to t('back'), <%= index_helper %>_path(locale:I18n.locale) %>
