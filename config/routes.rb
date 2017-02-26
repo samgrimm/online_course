@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+
   resources :cursos do
-    resources :seccos
+    resources :seccos do
+      resources :aulas
+    end
   end
   root to: 'static_pages#inicio'
 

@@ -1,0 +1,23 @@
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @aula.titulo %>
+</p>
+
+<p>
+  <strong>Conteudo:</strong>
+  <%= @aula.conteudo %>
+</p>
+
+<p>
+  <strong>Referencias:</strong>
+  <%= @aula.referencias %>
+</p>
+
+<p>
+  <strong>Secco:</strong>
+  <%= @aula.secco.titulo %>
+</p>
+
+<%= link_to t('edit'), edit_curso_secco_aula_path(@curso, @secco, @aula, locale: I18n.locale) %> |
+<%= link_to t('back'), curso_secco_aulas_path(@curso, @secco,locale: I18n.locale) %>

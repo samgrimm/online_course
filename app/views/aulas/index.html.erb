@@ -1,0 +1,21 @@
+<h2><%= t('.Aulas') %></h2>
+
+<hr>
+
+<div>
+  <% @aulas.each do |aula| %>
+    <div class="content">
+      <p><%= aula.titulo %></p>
+      <p><%= aula.conteudo %></p>
+      <p><%= aula.referencias %></p>
+      <p><%= aula.secco %></p>
+      <p><%= link_to t('show'), curso_secco_aula_path(@curso, @secco, aula, locale: I18n.locale) %></p>
+      <p><%= link_to t('edit'), edit_curso_secco_aula_path(@curso, @secco, aula,locale: I18n.locale) %></p>
+      <p><%= link_to t('delete'), curso_secco_aula_path(@curso, @secco, aula, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } %></p>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to t(".new_aula"), new_curso_secco_aula_path(@curso, @secco, locale:I18n.locale) %>

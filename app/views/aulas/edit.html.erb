@@ -1,0 +1,12 @@
+<h1><%= t('editing') %>  Aula</h1>
+<%= form_for(@aula, url:curso_secco_aula_path(@curso, @secco,@aula, locale: I18n.locale) ) do |f| %>
+
+  <%= render 'form', f:f %>
+
+  <div class="form-group">
+    <%= f.submit t('.update') %>
+  </div>
+  <% end %>
+
+<%= link_to t('show'), curso_secco_aula_path(@curso, @secco,@aula, locale:I18n.local) %> |
+<%= link_to t('back'), curso_secco_aulas_path(@curso, @secco,locale:I18n.locale) %>

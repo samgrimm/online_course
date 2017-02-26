@@ -1,0 +1,33 @@
+
+  <% if @aula.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aula.errors.count, "error") %> prohibited this aula from being saved:</h2>
+
+      <ul>
+      <% @aula.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-group">
+            <%= f.label :titulo %>
+      <%= f.text_field :titulo, class:"form-control" %>
+      </div>
+
+    <div class="form-group">
+            <%= f.label :conteudo %>
+      <%= f.text_area :conteudo, class:"form-control" %>
+      </div>
+
+    <div class="form-group">
+            <%= f.label :referencias %>
+      <%= f.text_area :referencias, class:"form-control" %>
+      </div>
+
+    <div class="form-group">
+            <%= f.label :secco_id %>
+      <%= f.text_field :secco_id, class:"form-control" %>
+      </div>
+
