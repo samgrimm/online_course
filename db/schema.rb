@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227005948) do
+ActiveRecord::Schema.define(version: 20170227174925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,18 @@ ActiveRecord::Schema.define(version: 20170227005948) do
   create_table "cursos", force: :cascade do |t|
     t.string   "titulo"
     t.text     "ementa"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "instructor_id"
+    t.index ["user_id"], name: "index_cursos_on_user_id", using: :btree
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "curso_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.index ["user_id"], name: "index_cursos_on_user_id", using: :btree
   end
 
   create_table "seccos", force: :cascade do |t|
@@ -57,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170227005948) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "roles"
+    t.string   "type"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

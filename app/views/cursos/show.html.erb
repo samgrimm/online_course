@@ -1,9 +1,8 @@
 
-<p>
-  <strong>Titulo:</strong>
+<h2>
   <%= @curso.titulo %>
-</p>
-
+</h2>
+<em><%= @curso.instructor %></em>
 <p>
   <strong>Ementa:</strong>
   <%= @curso.ementa %>
@@ -12,12 +11,17 @@
   <%= link_to t('new_secco'), new_curso_secco_path(@curso, locale: I18n.locale) %> |
   <%= link_to t('edit'), edit_curso_path(@curso, locale: I18n.locale) %> |
   <%= link_to t('back'), cursos_path(locale: I18n.locale) %>
-<% end %>  
+<% end %>
 
 <div class="">
+  <h3>Conteúdo</h3>
   <ul>
     <% @curso.seccos.each do |secco| %>
-      <li><%= link_to secco.titulo, [@curso, secco] %></li>
+      <% if logged_in?(:admin, :instructor, :student) %>
+        <li><%= link_to secco.titulo, [@curso, secco] %></li>
+      <% else %>
+        <li><%= secco.titulo %></li>
+      <% end %>
     <% end %>
   </ul>
 </div>

@@ -1,13 +1,16 @@
-<% @cursos.each do |curso| %>
-  <div class="col-md-4">
-    <div class="card">
-      <h3><%= curso.titulo %></h3>
-      <p><%= curso.ementa %></p>
-      <div class="btn-group " role="group" aria-label="Basic example">
-        <%=link_to fa_icon("shopping-cart"), "#", class:"btn btn-primary"%>
-        <%=link_to fa_icon("info"), curso, class:"btn btn-warning"%>
-        <%=link_to fa_icon("heart"), "#", class:"btn btn-success"%>
+<h2>Cursos Disponíveis</h2>
+<div class="row">
+  <% @cursos.each do |curso| %>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <h3><%= curso.titulo %></h3>
+        <p><%= curso.ementa %></p>
+        <div class="btn-group mx-auto" role="group" aria-label="Basic example">
+          <%=link_to fa_icon("shopping-cart"), "#", class:"btn btn-primary"%>
+          <%=link_to fa_icon("info"), curso, class:"btn btn-warning"%>
+          <%=link_to fa_icon("heart"), "#", class:"btn btn-success"%>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
