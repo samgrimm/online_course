@@ -1,0 +1,33 @@
+<div class="bg-faded pt-3 pl-2">
+  <h3><%= t('.curso_painel')%></h3>
+  <ul class="nav flex-column">
+
+    <li class="nav-item"><%= link_to t(".new_curso"), new_curso_path( locale:I18n.locale) , class:"nav-link" if instructor?(current_user)%></li>
+    <li class="nav-item"><%= link_to t(".new_secco"), new_curso_secco_path(@curso, locale:I18n.locale), class:"nav-link" if instructor?(current_user)%></li>
+    <li class="nav-item"><%= link_to t('.discussao'), cursos_path(locale: I18n.locale) , class:"nav-link"%></li>
+    <li class="nav-item"><%= link_to t('.comunicados'), cursos_path(locale: I18n.locale) , class:"nav-link"%></li>
+    <li class="nav-item"><%= link_to t('.meus_cursos'), cursos_path(locale: I18n.locale) , class:"nav-link"%></li>
+    <li class="nav-item"><%= link_to t('.perfil'), cursos_path(locale: I18n.locale) , class:"nav-link"%></li>
+  </ul>
+
+  <h3><%= t('.seccos')%></h3>
+  <ul class="nav flex-column">
+    <% @curso.seccos.each do |secco| %>
+      <li class="nav-item"><%= link_to secco.titulo, curso_secco_path(@curso, secco, locale: I18n.locale), class:"nav-link"%>
+        <a class="nav-link"
+          data-toggle="collapse"
+          href="#collapse_<%=secco.id%>"
+          aria-expanded="false"
+          aria-controls="collapse_<%=secco.id%>">
+            <%= fa_icon("plus") %>
+          </a>
+      <div class="collapse" id="collapse_<%=secco.id%>">
+        <div class="card card-block">
+          <% secco.aulas.each do |aula| %>
+          <p><%= link_to aula.titulo, curso_secco_aula_path(@curso, secco, aula, locale: I18n.locale)%></p>
+          <% end %>
+        </div>
+      </div></li>
+    <% end %>
+  </ul>
+</div>

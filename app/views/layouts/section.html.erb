@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Raissa</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'section', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'shared/nav'%>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'shared/course_sidebar' %>
+      </div>
+      <div class="col-md-9 mt-3">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

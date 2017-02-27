@@ -1,23 +1,28 @@
-<h2><%= t('.Aulas') %></h2>
+<h2><%= t('.aulas') %></h2>
 
-<hr>
+<div class="catalog text-muted">
+  <div class="container">
 
-<div>
-  <% @aulas.each do |aula| %>
-    <div class="content">
-      <p><%= aula.titulo %></p>
-      <p><%= aula.conteudo %></p>
-      <p><%= aula.referencias %></p>
-      <p><%= aula.secco %></p>
-      <% if logged_in?(:admin, :instructor) %>
-        <p><%= link_to t('show'), curso_secco_aula_path(@curso, @secco, aula, locale: I18n.locale) %></p>
-        <p><%= link_to t('edit'), edit_curso_secco_aula_path(@curso, @secco, aula,locale: I18n.locale) %></p>
-        <p><%= link_to t('delete'), curso_secco_aula_path(@curso, @secco, aula, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } %></p>
-      <% end %>  
+    <div class="row">
+      <% @aulas.each do |aula| %>
+      <div class="card">
+        <%= image_tag("girl-pointing.png")%>
+        <h3><%= aula.titulo %></h3>
+        <p class="card-text"><%= aula.conteudo %></p>
+        <div class="btn-group " role="group" aria-label="Basic example">
+          <%=link_to fa_icon("comment-o"), "#", class:"btn btn-secondary"%>
+          <%=link_to fa_icon("info"), curso_secco_aula_path(@curso, @secco,aula, locale: I18n.locale), class:"btn btn-secondary"%>
+          <%=link_to fa_icon("envelope-o"), "#", class:"btn btn-secondary"%>
+
+        <% if logged_in?(:admin, :instructor) %>
+          <%= link_to fa_icon("pencil"), edit_curso_secco_aula_path(@curso, @secco,aula, locale: I18n.locale) , class:"btn btn-secondary"%>
+          <%= link_to t('trash'), curso_secco_aula_path(@curso, @secco, aula, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } , class:"btn btn-secondary"%>
+        <% end %>
+        </div>
+      </div>
+      <% end %>
+
     </div>
-  <% end %>
+
+  </div>
 </div>
-
-<br>
-
-<%= link_to t(".new_aula"), new_curso_secco_aula_path(@curso, @secco, locale:I18n.locale) if logged_in?(:admin, :instructor)%>

@@ -1,21 +1,32 @@
-<h2><%= t('.Seccos') %></h2>
+<h2><%= t('.seccoes') %></h2>
 
-<hr>
+<div class="catalog text-muted">
+  <div class="container">
 
-<div>
-  <% @seccos.each do |secco| %>
-    <div class="content">
-      <p><%= secco.titulo %></p>
-      <p><%= secco.resumo %></p>
-      <p><%= secco.curso %></p>
-      <% if logged_in?(:admin, :instructor) %>
-        <p><%= link_to t('show'), curso_secco_path(@curso, secco, locale: I18n.locale) %></p>
-        <p><%= link_to t('edit'), edit_curso_secco_path(@curso, secco,locale: I18n.locale) %></p>
-        <p><%= link_to t('delete'), curso_secco_path(@curso, secco, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } %></p>
+    <div class="row">
+      <% @seccos.each do |secco| %>
+      <div class="card">
+        <%= image_tag("girl-pointing.png")%>
+        <h3><%= secco.titulo %></h3>
+        <p class="card-text"><%= secco.resumo %></p>
+        <div class="btn-group " role="group" aria-label="Basic example">
+          <%=link_to fa_icon("comment-o"), "#", class:"btn btn-secondary"%>
+          <%=link_to fa_icon("info"), curso_secco_aulas_path(@curso, secco, locale: I18n.locale), class:"btn btn-secondary"%>
+          <%=link_to fa_icon("envelope-o"), "#", class:"btn btn-secondary"%>
+
+        <% if logged_in?(:admin, :instructor) %>
+          <%= link_to fa_icon("pencil"), edit_curso_secco_path(@curso, secco,locale: I18n.locale) , class:"btn btn-secondary"%>
+          <%= link_to t('trash'), curso_secco_path(@curso, secco, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } , class:"btn btn-secondary"%>
+        <% end %>
+        </div>
+      </div>
       <% end %>
+
     </div>
-  <% end %>
+
+  </div>
 </div>
+
 
 <br>
 

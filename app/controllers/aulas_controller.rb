@@ -4,6 +4,7 @@ class AulasController < ApplicationController
   before_action :set_curso
   before_action :authenticate_user!
   access student: [:show, :index], instructor: :all, admin: :all
+  layout 'section'
   # GET /aulas
   # GET /aulas.json
   def index

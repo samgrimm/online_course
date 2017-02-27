@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Raissa</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'shared/nav'%>
+    <div class="row">
+      <div class="col-md-3">
+        <% if instructor?(current_user) %>
+          <%= render 'shared/instructor_sidebar' %>
+        <%  else %>
+          <%= render 'shared/student_sidebar' %>
+        <% end %>
+      </div>
+      <div class="col-md-9 mt-3">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

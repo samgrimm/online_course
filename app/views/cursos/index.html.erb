@@ -1,23 +1,22 @@
 <h2><%= t('.Cursos') %></h2>
 
-<hr>
+<div class="catalog text-muted">
+  <div class="container">
 
-<div>
-  <% @cursos.each do |curso| %>
-    <div class="content">
-      <p><%= curso.titulo %></p>
-      <p><%= @curso.instructor.email unless @curso.instructor.nil? %></p>
-      <p><%= curso.ementa %></p>
-
-      <% if logged_in?(:admin, :instructor) %>
-        <p><%= link_to t('show'), curso_path(curso, locale: I18n.locale) %></p>
-        <p><%= link_to t('edit'), edit_curso_path(curso,locale: I18n.locale) %></p>
-        <p><%= link_to t('delete'), curso_path(curso, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } %></p>
+    <div class="row">
+      <% @cursos.each do |curso| %>
+      <div class="card">
+        <%= image_tag("girl-pointing.png")%>
+        <h3><%= curso.titulo %></h3>
+        <p class="card-text"><%= curso.instructor.email unless curso.instructor.nil? %></p>
+        <p class="card-text"><%= curso.ementa %></p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <%=link_to fa_icon("info"), curso_seccos_path(curso), class:"btn btn-secondary"%>
+        </div>
+      </div>
       <% end %>
+
     </div>
-  <% end %>
+
+  </div>
 </div>
-
-<br>
-
-<%= link_to t(".new_curso"), new_curso_path( locale:I18n.locale) if logged_in?(:admin, :instructor) %>

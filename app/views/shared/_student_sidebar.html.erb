@@ -1,0 +1,12 @@
+<div class="bg-faded pt-3 pl-2">
+  <h3><%= t('.painel')%></h3>
+  <ul class="nav flex-column">
+
+    <li class="nav-item"><%= link_to t(".catalog"), catalogo_path( locale:I18n.locale) , class:"nav-link" if instructor?(current_user)%></li>
+    <li class="nav-item"><%= link_to t('.discussao'), cursos_path(locale: I18n.locale) , class:"nav-link"%></li>
+    <li class="nav-item"><%= link_to t('.comunicados'), cursos_path(locale: I18n.locale) , class:"nav-link"%></li>
+    <li class="nav-item"><%= link_to t('.meus_cursos'), cursos_path(locale: I18n.locale) , class:"nav-link"%></li>
+    <li class="nav-item"><%= link_to t('.perfil'), cursos_path(locale: I18n.locale) , class:"nav-link"%></li>
+  </ul>
+
+</div>

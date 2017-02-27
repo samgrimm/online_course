@@ -3,10 +3,11 @@ class SeccosController < ApplicationController
   before_action :set_curso
   before_action :authenticate_user!
   access all: [:index], student: [:show, :index], instructor: :all, admin: :all
+  layout 'section'
   # GET /seccos
   # GET /seccos.json
   def index
-    @seccoes = @curso.seccos
+    @seccos = @curso.seccos
   end
 
   # GET /seccos/1
