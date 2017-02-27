@@ -6,7 +6,9 @@
   <% @cursos.each do |curso| %>
     <div class="content">
       <p><%= curso.titulo %></p>
+      <p><%= @curso.instructor.email unless @curso.instructor.nil? %></p>
       <p><%= curso.ementa %></p>
+
       <% if logged_in?(:admin, :instructor) %>
         <p><%= link_to t('show'), curso_path(curso, locale: I18n.locale) %></p>
         <p><%= link_to t('edit'), edit_curso_path(curso,locale: I18n.locale) %></p>

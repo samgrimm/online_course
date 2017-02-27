@@ -2,7 +2,7 @@
 <h2>
   <%= @curso.titulo %>
 </h2>
-<em><%= @curso.instructor %></em>
+<em><%= @curso.instructor.email unless @curso.instructor.nil? %></em>
 <p>
   <strong>Ementa:</strong>
   <%= @curso.ementa %>

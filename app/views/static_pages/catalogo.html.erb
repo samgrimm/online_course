@@ -1,16 +1,33 @@
-<h2>Cursos Disponíveis</h2>
-<div class="row">
-  <% @cursos.each do |curso| %>
-    <div class="col-md-4">
-      <div class="card text-center">
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Catálogo de Cursos</h1>
+    <p class="lead text-muted">Aqui estão nossos cursos. Bora participar?</p>
+    <p>
+      <a href="#" class="btn btn-primary">Entrar</a>
+      <a href="#" class="btn btn-secondary">Criar Conta</a>
+    </p>
+  </div>
+</section>
+
+<div class="album text-muted">
+  <div class="container">
+
+    <div class="row">
+      <% @cursos.each do |curso| %>
+      <div class="card">
+        <%= image_tag("girl-pointing.png")%>
         <h3><%= curso.titulo %></h3>
-        <p><%= curso.ementa %></p>
+        <p class="card-text"><%= curso.instructor.email unless curso.instructor.nil? %></p>
+        <p class="card-text"><%= curso.ementa %></p>
         <div class="btn-group mx-auto" role="group" aria-label="Basic example">
-          <%=link_to fa_icon("shopping-cart"), "#", class:"btn btn-primary"%>
-          <%=link_to fa_icon("info"), curso, class:"btn btn-warning"%>
-          <%=link_to fa_icon("heart"), "#", class:"btn btn-success"%>
+          <%=link_to fa_icon("shopping-cart"), "#", class:"btn btn-secondary"%>
+          <%=link_to fa_icon("info"), curso, class:"btn btn-secondary"%>
+          <%=link_to fa_icon("heart"), "#", class:"btn btn-secondary"%>
         </div>
       </div>
+      <% end %>
+
     </div>
-  <% end %>
+
+  </div>
 </div>
