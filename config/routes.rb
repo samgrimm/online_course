@@ -8,10 +8,9 @@ Rails.application.routes.draw do
     end
   end
   root to: 'static_pages#inicio'
-
-  get 'static_pages/sobre'
-
-  get 'static_pages/contato'
+  get 'sobre', to: 'static_pages#sobre'
+  get 'contato', to: 'static_pages#contato'
+  get 'catalogo', to: 'static_pages#catalogo'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

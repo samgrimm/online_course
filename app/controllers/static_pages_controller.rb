@@ -7,4 +7,8 @@ class StaticPagesController < ApplicationController
 
   def contato
   end
+
+  def catalogo
+    @cursos = Curso.all
+  end
 end

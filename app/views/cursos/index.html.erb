@@ -7,13 +7,15 @@
     <div class="content">
       <p><%= curso.titulo %></p>
       <p><%= curso.ementa %></p>
-      <p><%= link_to t('show'), curso_path(curso, locale: I18n.locale) %></p>
-      <p><%= link_to t('edit'), edit_curso_path(curso,locale: I18n.locale) %></p>
-      <p><%= link_to t('delete'), curso_path(curso, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } %></p>
+      <% if logged_in?(:admin, :instructor) %>
+        <p><%= link_to t('show'), curso_path(curso, locale: I18n.locale) %></p>
+        <p><%= link_to t('edit'), edit_curso_path(curso,locale: I18n.locale) %></p>
+        <p><%= link_to t('delete'), curso_path(curso, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } %></p>
+      <% end %>
     </div>
   <% end %>
 </div>
 
 <br>
 
-<%= link_to t(".new_curso"), new_curso_path( locale:I18n.locale) %>
+<%= link_to t(".new_curso"), new_curso_path( locale:I18n.locale) if logged_in?(:admin, :instructor) %>

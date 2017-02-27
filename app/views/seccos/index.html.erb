@@ -8,13 +8,15 @@
       <p><%= secco.titulo %></p>
       <p><%= secco.resumo %></p>
       <p><%= secco.curso %></p>
-      <p><%= link_to t('show'), curso_secco_path(@curso, secco, locale: I18n.locale) %></p>
-      <p><%= link_to t('edit'), edit_curso_secco_path(@curso, secco,locale: I18n.locale) %></p>
-      <p><%= link_to t('delete'), curso_secco_path(@curso, secco, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } %></p>
+      <% if logged_in?(:admin, :instructor) %>
+        <p><%= link_to t('show'), curso_secco_path(@curso, secco, locale: I18n.locale) %></p>
+        <p><%= link_to t('edit'), edit_curso_secco_path(@curso, secco,locale: I18n.locale) %></p>
+        <p><%= link_to t('delete'), curso_secco_path(@curso, secco, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } %></p>
+      <% end %>
     </div>
   <% end %>
 </div>
 
 <br>
 
-<%= link_to t(".new_secco"), new_curso_secco_path(@curso, locale:I18n.locale) %>
+<%= link_to t(".new_secco"), new_curso_secco_path(@curso, locale:I18n.locale) if logged_in?(:admin, :instructor)%>
