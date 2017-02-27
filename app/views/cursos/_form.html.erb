@@ -1,15 +1,10 @@
 
-  <% if @curso.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
-
-      <ul>
-      <% @curso.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<% if @curso.errors.any? %>
+  <% @curso.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
   <% end %>
+<% end %>
+
 
     <div class="form-group">
             <%= f.label :titulo %>
@@ -20,4 +15,3 @@
             <%= f.label :ementa %>
       <%= f.text_area :ementa, class:"form-control" %>
       </div>
-
