@@ -22,7 +22,7 @@
         <p class="card-text"><%= curso.instructor.email unless curso.instructor.nil? %></p>
         <p class="card-text"><%= curso.ementa %></p>
         <div class="btn-group mx-auto" role="group" aria-label="Basic example">
-          <%=link_to fa_icon("shopping-cart"), "#", class:"btn btn-secondary"%>
+          <%=link_to fa_icon("shopping-cart"), enrollments_path(curso_id:curso.id), method: :post, class:"btn btn-secondary"%>
           <%=link_to fa_icon("info"), curso, class:"btn btn-secondary"%>
           <%=link_to fa_icon("heart"), "#", class:"btn btn-secondary"%>
         </div>

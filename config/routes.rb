@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :aulas
     end
   end
+  resources :enrollments, only: [:create]
   root to: 'static_pages#inicio'
   get 'sobre', to: 'static_pages#sobre'
   get 'contato', to: 'static_pages#contato'
