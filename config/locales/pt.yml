@@ -1,0 +1,73 @@
+en:
+  back: Voltar
+  show: Mostrar
+  edit: Editar
+  destroy: Apagar
+  new: Novo
+  editing: Editando
+  shared:
+    nav:
+      inicio: Início
+      contato: Contato
+      sobre: Sobre
+      minha_conta: Minha Conta
+      sair: Sair
+      entrar: Entrar
+      criar_conta: Criar Conta
+      meus_cursos: Meus Cursos
+      catalogo: Catálogo
+      cursos_cuir: Cursos Cuir
+      busca: Buscar
+    instructor_sidebar:
+      painel: Painel
+      new_curso: Adicionar Curso
+      discussao: Discussão
+      comunicados: Comunicados
+      meus_cursos: Meus Cursos
+      perfil: Meu Perfil
+    course_sidebar:
+      curso_painel: Painel do Curso
+      new_curso: Adicionar Curso
+      new_secco: Adicionar Seção
+      discussao: Discussão
+      comunicados: Comunicados
+      meus_cursos: Meus Cursos
+      perfil: Meu Perfil
+      seccos: Seções
+  aulas:
+    new:
+      create: Adicionar
+    edit:
+      update: Atualizar
+  cursos:
+    new:
+      create: Adicionar
+    edit:
+      update: Atualizar
+  seccos:
+    index:
+      seccoes: Seções
+      new_secco: Adicionar Seção
+    new:
+      create: Adicionar
+    edit:
+      update: Atualizar
+    show:
+      new_aula: Adicionar Aula
+  activerecord:
+    models:
+      user: Usuário
+      curso: Curso
+      secco: Seção
+      aula: Aula
+    attributes:
+      curso:
+        titulo: Título
+        ementa: Ementa
+      secco:
+        titulo: Título
+        resumo: Resumo
+      aula:
+        titulo: Título
+        conteudo: Conteúdo
+        referencias: Referências

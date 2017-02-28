@@ -1,22 +1,15 @@
 
-<p>
-  <strong>Titulo:</strong>
+<h3>
+
   <%= @secco.titulo %>
-</p>
-
-<p>
-  <strong>Resumo:</strong>
-  <%= @secco.resumo %>
-</p>
-
-<p>
-  <strong>Curso:</strong>
-  <%= link_to @secco.curso.titulo, @curso %>
-</p>
-
-<%= link_to t(".new_aula"), new_curso_secco_aula_path(@curso, @secco, locale:I18n.locale) if logged_in?(:admin, :instructor)%>
-
+</h3>
 <% if logged_in?(:admin, :instructor) %>
+  <%= link_to t(".new_aula"), new_curso_secco_aula_path(@curso, @secco, locale:I18n.locale) %> |
   <%= link_to t('edit'), edit_curso_secco_path(@curso, @secco, locale: I18n.locale) %> |
   <%= link_to t('back'), curso_seccos_path(@curso, locale: I18n.locale) %>
-<% end %>  
+<% end %>
+
+
+<p>
+  <%= @secco.resumo %>
+</p>

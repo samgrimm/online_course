@@ -1,23 +1,73 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  back: Back
+  show: Show
+  edit: Edit
+  destroy: Destroy
+  new: New
+  editing: Editing
+  shared:
+    nav:
+      inicio: Home
+      contato: Contact
+      sobre: About
+      minha_conta: My Account
+      sair: Logout
+      entrar: Login
+      criar_conta: Sign up
+      meus_cursos: My Courses
+      catalogo: Catalog
+      cursos_cuir: Queer Courses
+      busca: Search
+    instructor_sidebar:
+      painel: Dashboard
+      new_curso: Add course
+      discussao: Discussion
+      comunicados: Announcements
+      meus_cursos: My Courses
+      perfil: Profile
+    course_sidebar:
+      curso_painel: Course Dashboard
+      new_curso: Add course
+      new_secco: Add Section
+      discussao: Discussion
+      comunicados: Announcements
+      meus_cursos: My Courses
+      perfil: Profile
+      seccos: Sections
+  aulas:
+    new:
+      create: Create
+    edit:
+      update: Update
+  cursos:
+    new:
+      create: Create
+    edit:
+      update: Update
+  seccos:
+    index:
+      seccoes: Sections
+      new_secco: Add Section
+    new:
+      create: Create
+    edit:
+      update: Update
+    show:
+      new_aula: Add Lesson
+  activerecord:
+    models:
+      user: User
+      curso: Course
+      secco: Section
+      aula: Lesson
+    attributes:
+      curso:
+        titulo: Title
+        ementa: Content
+      secco:
+        titulo: Title
+        resumo: Summary
+      aula:
+        titulo: Title
+        conteudo: Content
+        referencias: References

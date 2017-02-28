@@ -2,39 +2,39 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Cursos Cuir</a>
+  <a class="navbar-brand" href="#"><%= t('.cursos_cuir')%></a>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Inicio", root_path, class:"nav-link" %>
+        <%= link_to t(".inicio"), root_path, class:"nav-link" %>
       </li>
       <li class="nav-item ">
-        <%= link_to "Catálogo", catalogo_path, class:"nav-link" %>
+        <%= link_to t(".catalogo"), catalogo_path, class:"nav-link" %>
       </li>
       <% if user_signed_in? %>
         <li class="nav-item ">
-          <%= link_to "Meus Cursos", cursos_path, class:"nav-link" %>
+          <%= link_to t(".meus_cursos"), cursos_path, class:"nav-link" %>
         </li>
       <% end %>
       <li class="nav-item ">
-        <%= link_to "Contato", contato_path, class:"nav-link" %>
+        <%= link_to t(".contato"), contato_path, class:"nav-link" %>
       </li>
       <li class="nav-item ">
-        <%= link_to "Sobre", sobre_path, class:"nav-link" %>
+        <%= link_to t("sobre"), sobre_path, class:"nav-link" %>
       </li>
     </ul>
     <ul class="navbar-nav pull-right">
       <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="text" >
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= t('.busca')%></button>
       </form>
       <% if user_signed_in? %>
-        <li class="nav-item"><%= link_to "Minha Conta", edit_user_registration_path, class:"nav-link"  %></li>
-        <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, method: :delete, class:"nav-link"  %></li>
+        <li class="nav-item"><%= link_to t(".minha_conta"), edit_user_registration_path, class:"nav-link"  %></li>
+        <li class="nav-item"><%= link_to t('.sair'), destroy_user_session_path, method: :delete, class:"nav-link"  %></li>
 
       <% else %>
-        <li class="nav-item"><%= link_to "Entrar", new_user_session_path, class:"nav-link"  %></li>
-        <li class="nav-item"><%= link_to "Criar Conta", new_user_registration_path, class:"nav-link"  %></li>
+        <li class="nav-item"><%= link_to t(".entrar"), new_user_session_path, class:"nav-link"  %></li>
+        <li class="nav-item"><%= link_to t(".criar_conta"), new_user_registration_path, class:"nav-link"  %></li>
       <% end %>
     </ul>
 

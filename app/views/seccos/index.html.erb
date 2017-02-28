@@ -16,7 +16,7 @@
 
         <% if logged_in?(:admin, :instructor) %>
           <%= link_to fa_icon("pencil"), edit_curso_secco_path(@curso, secco,locale: I18n.locale) , class:"btn btn-secondary"%>
-          <%= link_to t('trash'), curso_secco_path(@curso, secco, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } , class:"btn btn-secondary"%>
+          <%= link_to fa_icon('trash'), curso_secco_path(@curso, secco, locale: I18n.locale), method: :delete, data: { confirm: t('are_you_sure') } , class:"btn btn-secondary"%>
         <% end %>
         </div>
       </div>
