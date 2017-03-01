@@ -1,24 +1,16 @@
-# README
+# Online Course Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a Ruby on Rails 5 application for a MOOC -  see it in action [here](https://curso-cuir.herokuapp.com/)
 
-Things you may want to cover:
+This is still a work in progress project and there are many more features to be added.
 
-* Ruby version
+### Features (so far)
+- Instructors can create courses
+- Students can sign up and enroll and take courses
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Features still to be added:
+- Video Content
+- Payment Processing for enrollment
+- Q&A section
+- Quizzes
