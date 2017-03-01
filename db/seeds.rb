@@ -1,8 +1,5 @@
-instructor = Instructor.create(
-  email: "samantha.grimm@gmail.com",
-  password: "foobar",
-  password_confirmation: "foobar",
-  roles: 'instructor'
+instructor = Instructor.find_by(
+  email: "samantha.grimm@gmail.com"
 )
 puts "Created one instructor"
 
@@ -15,19 +12,19 @@ student = Student.create(
 
 puts "Created one student"
 curso = instructor.cursos.build(
-  titulo: "História da Arte",
-  ementa: "Discussão sobre história da arte"
+  titulo: "História da Danca",
+  ementa: "Discussão sobre história da danca"
 )
 curso.save
 
 curso = instructor.cursos.build(
-  titulo: "História da Psicologia Moderna",
-  ementa: "Discussão sobre história da Psicologia Moderna"
+  titulo: "Pedagogia",
+  ementa: "Discussão sobre Pedagogia"
 )
 curso.save
 curso = instructor.cursos.build(
-  titulo: "História da Ciência",
-  ementa: "Discussão sobre história da ciência"
+  titulo: "Lutas de Classe",
+  ementa: "Discussão sobre lutas de classe"
 )
 curso.save
 
