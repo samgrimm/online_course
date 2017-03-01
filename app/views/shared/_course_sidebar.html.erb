@@ -1,5 +1,5 @@
 <div class="bg-faded pt-3 pl-2">
-  <h3><%= t('.curso_painel')%> - <%= link_to @secco.curso.titulo, @curso %></h3>
+  <h3><%= t('.curso_painel')%> - <%= link_to @curso.titulo, @curso %></h3>
   <ul class="nav flex-column">
 
     <li class="nav-item"><%= link_to t(".new_curso"), new_curso_path( locale:I18n.locale) , class:"nav-link" if instructor?(current_user)%></li>
